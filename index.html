@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.A.P.S.A.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #ffffff; 
+            padding: 50px;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            color: #ffcc00;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-family: 'Instrument Serif', serif;
+            font-size: 18px;
+            color: #85b90b;
+            margin-bottom: 30px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            border: none;
+            border-radius: 8px;
+            color: #1f1f1f;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #memoryBtn {
+            background-color: #ffcc00;
+            color: #ffffff;
+        }
+        #memoryBtn:hover {
+            background-color: #e6b800;
+            transform: scale(1.05);
+        }
+
+        #wordsBtn {
+            background-color: #4e944f;
+            color: #ffffff;
+        }
+        #wordsBtn:hover {
+            background-color: #3e7a3e;
+            transform: scale(1.05);
+        }
+
+        #motivateBtn {
+            background-color: #ff6f00;
+            color: #ffffff;
+        }
+        #motivateBtn:hover {
+            background-color: #e65c00;
+            transform: scale(1.05);
+        }
+
+        #response {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #333333;
+            font-family: 'Instrument Serif', serif;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+h1, p, .logo {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0; /* Başlangıçta görünmez */
+}
+
+
+.logo {
+    animation-delay: 0.2s;
+}
+h1 {
+    animation-delay: 0.5s;
+}
+p {
+    animation-delay: 0.8s;
+}
+
+/* Giriş Animasyonu için */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+h1, p, .logo {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0; /* Başlangıçta görünmez */
+}
+
+/* Animasyon gecikmesi ile sıralı giriş */
+.logo {
+    animation-delay: 0.2s;
+}
+h1 {
+    animation-delay: 0.5s;
+}
+p {
+    animation-delay: 0.8s;
+}
+
+
+
+    </style>
+</head>
+<body>
+ <img src="logo.png" alt="J.A.P.S.A Logo" class="logo" style="max-width: 120px;">
+
+   <h1>J.A.P.S.A.</h1>
+    <p><i>Just A Perfect Spicy Assistant</i></p>
+
+
+<audio id="clickSound" src="click.mp3"></audio>
+
+
+    <button id="memoryBtn" onclick="recallMemory()">Recal Memory</button>
+    <button id="wordsBtn" onclick="niceWords()">Nice Words</button>
+    <button id="motivateBtn" onclick="motivate()">Motivate</button>
+
+    <div id="response"></div>
+
+    <script>
+        function recallMemory() {
+        document.getElementById("clickSound").play();
+            const memories = [
+               "Moda sahil kafama kuş sıçmıştı, hoş değildi. ",
+        "Kahve dünyasında otururken bana sen kornişon turşusun demiştin mal q ben SÜTLACIM turşu ne",
+        "Oevladı beni ignorelamıştın sonra rüyanda görmüştün işte böyle uhlevi bi insanım üzme beni",
+        "Moda sahil bommboştu minecraft environmentin sonuna gelmiş gibiydik",
+        "Gece 3 gibi dinozor konuşuyoduk başka kimseyle yaşayamayız bunu",
+        "Galata kulesinde birkaç münasebetimiz olmuş idi. mlsf. Pekmez kavanozumun kılıfını görmüştün. Kurdeleli.",
+        "bi anda sultanbeyliye gitmiştik aw küçük water city bomboş bi yerdi",
+        "konuşmamızın ikinci haftası cağ kebabı yemeye götürmüştüm seni yaptığımız EN iyi şeydi",
+        "fotokabinde öpüşüp neden videoya çektik ve neden sildik yani hiç çekmeseydik ama neyse iyi olmuştu güzeldi",
+        "senin yüzünden deprem olmuştu yine moda sahil mükemmel"
+            ];
+            document.getElementById("response").innerText = randomPick(memories);
+        }
+
+        function niceWords() {
+document.getElementById("clickSound").play();
+            const words = [
+                      "seninle zonguldağa bile gelirdim Kütahya Müftüm",
+        "seni seviyorum",
+        "dinozor olsak ve kapışsak net sana çakardım",
+        "dedecik",
+        "köylü olman seni sakın üzmesin",
+        "SERTAAAAAAAAAÇ",
+        "Japsacim selam",
+        "büyükbabacik",
+        "ezikkk seni .d",
+        "a evet"
+            ];
+            document.getElementById("response").innerText = randomPick(words);
+        }
+
+        function motivate() {
+document.getElementById("clickSound").play();
+            const motivations = [
+                      "KAMİ yani çalışmaya devam",
+        " Patron sekreter konseptini yapmamız lazım hayatını buna ada",
+        "Erzurumda geçireceğimiz günleri düşün",
+        "kocaman küvetimiz ve ördeklerimiz olacak",
+        "japsacim zengin olmazsan boşal boşal boşal",
+        "San Franciskoya gitmeliyiz gavurlara 50kg tasssaklarını göstericez",
+        "Yengeme hava atıcam",
+        "Kayserilisin aq",
+        "Bana her gün süt burger alacaksın zengin olmalısın",
+        "K A M İ"
+            ];
+            document.getElementById("response").innerText = randomPick(motivations);
+        }
+
+       function randomPick(list) {
+    const responseElement = document.getElementById("response");
+    responseElement.style.opacity = "0";
+    responseElement.innerText = list[Math.floor(Math.random() * list.length)];
+    setTimeout(() => {
+        responseElement.style.opacity = "1"; 
+    }, 50);
+    return responseElement.innerText;
+}
+
+    </script>
+</body>
+</html>
+
